@@ -6,14 +6,23 @@ class CardDeck:
              '\u26662', '\u26663', '\u26664', '\u26665', '\u26666', '\u26667', '\u26668', '\u26669', '\u266610', '\u2666J', '\u2666Q', '\u2666K', '\u2666A',
              '\u26662', '\u26663', '\u26664', '\u26665', '\u26666', '\u26667', '\u26668', '\u26669', '\u266610', '\u2666J', '\u2666Q', '\u2666K', '\u2666A']
 
+    deck = []
+    out_cards = []
+
+    def get_new_deck(self):
+        self.deck = list(self.cards)
+
     def get_card(self):
         return self.cards[random.randint(0, len(self.cards))]
 
-
+    def shuffle_deck(self):
+        self.get_new_deck()
+        random.shuffle(self.deck)
 
 
 
 deck = CardDeck()
+deck.shuffle_deck()
 
-
-print(deck.get_card())
+print(deck.deck)
+print(deck.cards)
